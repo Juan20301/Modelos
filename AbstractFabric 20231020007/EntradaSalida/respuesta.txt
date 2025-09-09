@@ -1,0 +1,1 @@
+La suma desde archivo es: 13.0
