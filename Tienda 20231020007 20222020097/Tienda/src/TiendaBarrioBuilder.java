@@ -104,25 +104,30 @@ public class TiendaBarrioBuilder implements AbstractTienda {
     }
 }
 
-
-
     @Override
     public void buildListarPorCategoria() {
         if (this.producto == null) {
             System.out.println("No hay productos en el inventario.");
             return;
+        } else {
+            System.out.println("dame la categoria: " );
+            Scanner scanner = new Scanner(System.in);
+            String categoria = scanner.nextLine();
+            System.out.println("=== Productos en la categoría: " + categoria + " ===");
+            System.out.println(tienda.listarPorCategoria(categoria));
         }
-        tienda.listarPorCategoria(this.producto.getCategoria());
+        
     }
-
     @Override
     public void buildListarInventario() {
         if (this.producto == null) {
             System.out.println("No hay productos en el inventario.");
             return;
-        }
-        tienda.listarInventario();
+        }else {
+            System.out.println("=== Productos disponibles ===");
+            System.out.println(tienda.listarInventario());
     }
+        }
 
     @Override
     public void buildGetInventario() {
@@ -135,3 +140,4 @@ public class TiendaBarrioBuilder implements AbstractTienda {
     }
 
 }
+
